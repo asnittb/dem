@@ -4,9 +4,8 @@
 <div class="row">
   <% @listings.each do |listing| %>
 <div class="col-md-3">
- <%= image_tag listing.image.url(:thumb) %>
+  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
   <h4><%=number_to_currency listing.price %></h4>
-  <%= link_to 'Show', listing %>
      <%= link_to 'Edit', edit_listing_path(listing) %> 
   <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
 
