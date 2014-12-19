@@ -10,9 +10,9 @@ class OrdersController < ApplicationController
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
-  # GET /orders/new
+  # GET/orders/new
   def new
-    @orders = Orders.new
+    @order = Order.new
     @listing = Listing.find(params[:listing_id])
   end
   
